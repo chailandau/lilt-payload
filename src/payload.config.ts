@@ -1,21 +1,27 @@
-import { buildConfig } from 'payload/config';
 import path from 'path';
-// import Examples from './collections/Examples';
+
+import { buildConfig } from 'payload/config';
+
 import Users from './collections/Users';
+import { Media } from './collections/Media';
+
 import Header from './globals/Header';
-import Pages from './collections/Pages';
+import Footer from './globals/Footer';
+
+import Pages from './templates/Pages';
+import Buttons from './components/Buttons';
+
+import { groupCollections, groupGlobals } from './utils/createGroups';
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  admin: {
-    user: Users.slug,
-  },
   collections: [
-    Users,
-    Pages
+    ...groupCollections([Pages], 'Templates'),
+    ...groupCollections([Media, Buttons], 'Content'),
+    ...groupCollections([Users], 'Admin'),
   ],
   globals: [
-    Header
+    ...groupGlobals([Header, Footer], 'Global'),
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
