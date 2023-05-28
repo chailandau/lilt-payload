@@ -1,15 +1,21 @@
 import { CollectionConfig } from 'payload/types';
 
+import { slug } from '../fields/slug';
+import { title } from '../fields/title';
+
+import { generateSlug } from '../utils/generateSlug';
+
 const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
-    useAsTitle: 'title',
+    useAsTitle: 'title'
+  },
+  hooks: {
+    beforeChange: [generateSlug('title')]
   },
   fields: [
-    {
-      name: 'title',
-      type: 'text',
-    },
+    ...title,
+    ...slug,
   ],
 }
 

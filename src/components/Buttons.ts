@@ -1,5 +1,5 @@
 import { CollectionConfig } from 'payload/types';
-import { linkConfig } from '../configs/linkConfig';
+import { link } from '../fields/link';
 
 const Buttons: CollectionConfig = {
   slug: 'buttons',
@@ -11,7 +11,7 @@ const Buttons: CollectionConfig = {
       name: 'internalName',
       type: 'text'
     },
-    ...linkConfig,
+    ...link,
     {
       name: 'color',
       type: 'radio',

@@ -1,23 +1,13 @@
+import { CollectionAdminOptions } from "payload/dist/collections/config/types"
+
 import { CollectionConfig, GlobalConfig } from "payload/types"
 
-export const groupCollections = (collections: CollectionConfig[], group: string): CollectionConfig[] => {
-    return collections.map(collection => {
+export const createGroup = (allGroups: CollectionConfig[] | GlobalConfig[], group: string) => {
+    return allGroups.map((indivGroup: { admin?: CollectionAdminOptions }) => {
         return {
-            ...collection,
+            ...indivGroup,
             admin: {
-                ...collection.admin,
-                group
-            },
-        }
-    })
-}
-
-export const groupGlobals = (globals: GlobalConfig[], group: string): GlobalConfig[] => {
-    return globals.map(global => {
-        return {
-            ...global,
-            admin: {
-                ...global.admin,
+                ...indivGroup.admin,
                 group
             },
         }

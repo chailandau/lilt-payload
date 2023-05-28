@@ -1,9 +1,13 @@
 import { GlobalConfig } from "payload/types";
-import { menuItemConfig } from "../configs/menuItemConfig";
+
+import { menuItem } from "../fields/menuItem";
+import { socialLinks } from "../fields/socialLinks";
 
 const Footer: GlobalConfig = {
   slug: "footer",
   fields: [
+    ...socialLinks,
+    ...menuItem,
     {
       name: 'copyrightText',
       type: 'text',
@@ -11,7 +15,6 @@ const Footer: GlobalConfig = {
         description: 'Use variable "%CURRENT_YEAR%" to signify current year.'
       }
     },
-    ...menuItemConfig,
   ],
 
 };

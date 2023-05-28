@@ -1,6 +1,6 @@
 import { Field } from "payload/types";
 
-export const ctaConfig = [
+export const cta = [
     {
         name: 'callToAction',
         type: 'relationship',
@@ -9,7 +9,7 @@ export const ctaConfig = [
     }
 ] as Field[];
 
-export const multiCtaConfig = [
+export const multiCta = [
     {
         name: 'callToAction',
         type: 'relationship',

@@ -1,6 +1,6 @@
 import { CollectionConfig } from 'payload/types';
 
-export const Media: CollectionConfig = {
+const Media: CollectionConfig = {
     slug: 'media',
     upload: {
         staticURL: '/media',
@@ -15,3 +15,5 @@ export const Media: CollectionConfig = {
         },
     ],
 };
+
+export default Media;

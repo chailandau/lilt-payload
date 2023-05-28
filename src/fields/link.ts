@@ -1,6 +1,6 @@
 import { Field } from "payload/types";
 
-export const linkConfig = [
+export const link = [
     {
         name: 'label',
         type: 'text',
@@ -28,7 +28,7 @@ export const linkConfig = [
         admin: {
             allowCreate: false,
             description: 'Choose a page to link to.',
-            condition: (data) => data.linkType === 'internal' ? true : false
+            condition: (data, siblingData) => siblingData?.linkType === 'internal' ? true : false
         }
     },
     {
@@ -36,7 +36,7 @@ export const linkConfig = [
         type: 'text',
         admin: {
             description: 'Input a valid URL. Example: "https://google.com/".',
-            condition: (data) => data.linkType === 'external' ? true : false
+            condition: (data, siblingData) => siblingData?.linkType === 'external' ? true : false
         }
     }
 ] as Field[]

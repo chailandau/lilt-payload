@@ -1,12 +1,12 @@
 import { GlobalConfig } from "payload/types";
-import { menuItemConfig } from "../configs/menuItemConfig";
-import { ctaConfig } from "../configs/ctaConfig";
+import { menuItem } from "../fields/menuItem";
+import { cta } from "../fields/cta";
 
 const Header: GlobalConfig = {
   slug: "header",
   fields: [
-    ...menuItemConfig,
-    ...ctaConfig
+    ...menuItem,
+    ...cta
   ],
 
 };
