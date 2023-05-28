@@ -2,14 +2,14 @@ import { CollectionConfig } from 'payload/types';
 
 import { setMaxFileSize } from '../utils/setMaxFileSize';
 
-const Media: CollectionConfig = {
-    slug: 'media',
+const Images: CollectionConfig = {
+    slug: 'images',
     admin: {
         defaultColumns: ['filename', 'alt', 'width', 'height', 'filesize', 'updatedAt'],
     },
     upload: {
-        staticURL: '/media',
-        staticDir: 'media',
+        staticURL: '/images',
+        staticDir: 'images',
         adminThumbnail: 'thumbnail',
         mimeTypes: ['image/*'],
     },
@@ -24,4 +24,4 @@ const Media: CollectionConfig = {
 
 };
 
-export default Media;
+export default Images;

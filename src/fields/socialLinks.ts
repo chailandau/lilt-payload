@@ -11,7 +11,7 @@ export const socialLinks = [
             {
                 name: "icon",
                 type: "relationship",
-                relationTo: "media",
+                relationTo: "images",
                 hasMany: false
             },
             {
@@ -22,7 +22,7 @@ export const socialLinks = [
         admin: {
             components: getRowLabel({
                 relationField: 'icon',
-                collection: 'media',
+                collection: 'images',
                 referenceTitle: 'alt',
                 defaultTitle: 'Social link'
             }),

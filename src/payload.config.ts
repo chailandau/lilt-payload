@@ -5,7 +5,7 @@ import { buildConfig } from 'payload/config';
 import { CollectionConfig, GlobalConfig } from 'payload/types';
 
 import Users from './collections/Users';
-import Media from './collections/Media';
+import Images from './collections/Images';
 
 import Header from './globals/Header';
 import Footer from './globals/Footer';
@@ -20,7 +20,7 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
-    ...createGroup([Media, Buttons], 'Content') as CollectionConfig[],
+    ...createGroup([Images, Buttons], 'Content') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],
   ],
   globals: [

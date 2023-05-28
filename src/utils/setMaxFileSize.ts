@@ -3,7 +3,9 @@ import { Field } from "payload/types";
 export const setMaxFileSize = (max: number) => {
 
     const bytesToMb = (bytes: number) => {
-        return (bytes / (1024 * 1024)).toFixed(2)
+        const toMb = bytes / (1024 * 1024)
+
+        return Math.round(toMb * 100) / 100
     }
 
     return ([{
