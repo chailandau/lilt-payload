@@ -5,6 +5,7 @@ const Buttons: CollectionConfig = {
   slug: 'buttons',
   admin: {
     useAsTitle: 'internalName',
+    defaultColumns: ['internalName', 'label', 'linkType', 'updatedAt']
   },
   fields: [
     {

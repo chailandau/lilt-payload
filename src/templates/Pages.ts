@@ -8,7 +8,8 @@ import { generateSlug } from '../utils/generateSlug';
 const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
-    useAsTitle: 'title'
+    useAsTitle: 'title',
+    defaultColumns: ['title', 'slug', 'updatedAt']
   },
   hooks: {
     beforeChange: [generateSlug('title')]
