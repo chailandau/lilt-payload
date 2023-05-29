@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { RowLabelArgs } from 'payload/dist/admin/components/forms/RowLabel/types';
 
-interface getRowLabelProps {
+interface GetRowLabelProps {
     /** Name of relation field you are referencing; used to check if field is populated */
     relationField: string;
     /** Name of collection you are relating to */
@@ -20,7 +20,7 @@ export const getRowLabel = ({
     collection,
     referenceTitle,
     defaultTitle
-}: getRowLabelProps) => ({
+}: GetRowLabelProps) => ({
     RowLabel: ({ data, index }: RowLabelArgs) => {
         const [title, setTitle] = useState(null);
 

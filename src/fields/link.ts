@@ -1,10 +1,8 @@
 import { Field } from "payload/types";
+import { label } from "./label";
 
 export const link = [
-    {
-        name: 'label',
-        type: 'text',
-    },
+    ...label,
     {
         name: 'linkType',
         type: 'radio',

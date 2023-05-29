@@ -15,12 +15,13 @@ import Pages from './templates/Pages';
 import Buttons from './components/Buttons';
 
 import { createGroup } from './utils/createGroups';
+import Heroes from './components/Heroes';
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
-    ...createGroup([Images, Buttons], 'Content') as CollectionConfig[],
+    ...createGroup([Images, Buttons, Heroes], 'Content') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],
   ],
   globals: [

@@ -1,8 +1,10 @@
-import { Field } from "payload/types";
-import { link } from "./link";
-import { capitalizeWord } from "../utils/functions";
-
 import React from 'react';
+
+import { Field } from "payload/types";
+
+import { link } from "./link";
+
+import { capitalizeWord } from "../utils/functions";
 
 export const menuItem = [
     {

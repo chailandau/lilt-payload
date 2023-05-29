@@ -1,17 +1,15 @@
 import { CollectionConfig } from 'payload/types';
 import { link } from '../fields/link';
+import { internalName, internalNameAsTitle } from '../fields/internalName';
 
 const Buttons: CollectionConfig = {
   slug: 'buttons',
   admin: {
-    useAsTitle: 'internalName',
+    ...internalNameAsTitle,
     defaultColumns: ['internalName', 'label', 'linkType', 'updatedAt']
   },
   fields: [
-    {
-      name: 'internalName',
-      type: 'text'
-    },
+    ...internalName,
     ...link,
     {
       name: 'color',
@@ -24,6 +22,10 @@ const Buttons: CollectionConfig = {
         {
           label: 'Green',
           value: 'green',
+        },
+        {
+          label: 'White',
+          value: 'white',
         },
       ],
       defaultValue: 'blue'
