@@ -2,6 +2,7 @@ import { CollectionConfig } from 'payload/types';
 
 import { internalName, internalNameAsTitle } from '../fields/internalName';
 import { heading } from '../fields/heading';
+import { richText } from '../fields/richText';
 
 
 const Heroes: CollectionConfig = {
@@ -16,7 +17,8 @@ const Heroes: CollectionConfig = {
   },
   fields: [
     ...internalName,
-    ...heading({ headingTag: 'h1' })
+    ...heading('h1'),
+    ...richText
   ],
 
 }
