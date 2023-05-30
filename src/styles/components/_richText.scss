@@ -1,0 +1,28 @@
+.rich-text {
+    &__wrapper {
+        border: $light-gray-border;
+        border-top: 0;
+        box-shadow: $box-shadow;
+        .rich-text__toolbar {
+            border: 0;
+            border-top: $light-gray-border;
+            border-bottom: $light-gray-border;
+        }
+    }
+
+    &__editor {
+        [data-slate-node="element"] {
+            margin-bottom: 1.2rem;
+        }
+        border-left: 0 !important;
+    }
+}
+
+html[data-theme="dark"] .rich-text {
+    &__wrapper {
+        border-color: $gray;
+        .rich-text__toolbar {
+            border-color: $gray;
+        }
+    }
+}

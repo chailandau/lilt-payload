@@ -2,11 +2,8 @@ import { Field } from "payload/types";
 
 export const richText = [
     {
-        name: 'content', // required
-        type: 'richText', // required
-        defaultValue: [{
-            children: [{ text: 'Here is some default content for this field' }],
-        }],
+        name: 'content',
+        type: 'richText',
         admin: {
             elements: [
                 'ul',
