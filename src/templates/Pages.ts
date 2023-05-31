@@ -1,14 +1,14 @@
 import { CollectionConfig } from 'payload/types';
 
 import { slug } from '../fields/slug';
-import { title } from '../fields/title';
+import { title, titleAsTitle } from '../fields/title';
 
 import { generateSlug } from '../utils/generateSlug';
 
 const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
-    useAsTitle: 'title',
+    ...titleAsTitle,
     defaultColumns: ['title', 'slug', 'updatedAt']
   },
   hooks: {

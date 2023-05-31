@@ -5,4 +5,8 @@ export const title = [
         name: 'title',
         type: 'text'
     },
-] as Field[]
+] as Field[];
+
+export const titleAsTitle = {
+    useAsTitle: 'title',
+};

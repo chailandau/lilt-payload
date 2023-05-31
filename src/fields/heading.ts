@@ -18,3 +18,6 @@ export const heading = (headingTag?: HeadingTags): Field[] => ([
     },
 ]) as Field[]
 
+export const headingAsTitle = {
+    useAsTitle: 'heading',
+};

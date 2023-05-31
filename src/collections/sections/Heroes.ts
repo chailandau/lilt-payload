@@ -1,11 +1,11 @@
 import { CollectionConfig } from 'payload/types';
 
-import { internalName, internalNameAsTitle } from '../fields/internalName';
-import { heading } from '../fields/heading';
-import { richText } from '../fields/richText';
-import { cta, ctaTile } from '../fields/cta';
-import { subheading } from '../fields/subheading';
-import { getRowLabel } from '../utils/getRowLabel';
+import { internalName, internalNameAsTitle } from '../../fields/internalName';
+import { heading } from '../../fields/heading';
+import { richText } from '../../fields/richText';
+import { cta, ctaTile } from '../../fields/cta';
+import { subheading } from '../../fields/subheading';
+import { getRowLabel } from '../../utils/getRowLabel';
 
 
 const Heroes: CollectionConfig = {

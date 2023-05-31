@@ -1,6 +1,6 @@
 import { CollectionConfig } from 'payload/types';
 
-import { setMaxFileSize } from '../utils/setMaxFileSize';
+import { setMaxFileSize } from '../../utils/setMaxFileSize';
 
 const Images: CollectionConfig = {
     slug: 'images',

@@ -3,6 +3,10 @@ import { Field } from "payload/types";
 export const label = [
     {
         name: 'label',
-        type: 'text',
+        type: 'text'
     }
-] as Field[]
+] as Field[];
+
+export const labelAsTitle = {
+    useAsTitle: 'label',
+};
