@@ -9,12 +9,11 @@ export const cta = [
     }
 ] as Field[];
 
-export const multiCta = [
+export const ctaTile = [
     {
-        name: 'callToAction',
+        name: 'callToActionTile',
         type: 'relationship',
-        relationTo: 'buttons',
-        hasMany: true,
-        max: 2
+        relationTo: 'cta-tiles',
+        hasMany: false
     }
 ] as Field[];

@@ -30,9 +30,8 @@ export const getRowLabel = ({
             data[relationField] && (
                 axios.get(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/${collection}/${data[relationField]}`)
                     .then((res) => { setTitle(res.data[referenceTitle]) }))
-        }, [data[relationField]])
+        }, [data[relationField]]);
 
-        console.log(data[relationField])
         return data[relationField]
             ? title || fallbackTitle
             : fallbackTitle

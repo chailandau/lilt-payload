@@ -17,7 +17,6 @@ const CtaTiles: CollectionConfig = {
     ...internalName,
     ...icon,
     ...link,
-
   ],
 
 }
