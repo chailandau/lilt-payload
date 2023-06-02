@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload/types';
-import { link } from '../../fields/link';
+
 import { internalName, internalNameAsTitle } from '../../fields/internalName';
+import { link } from '../../fields/link';
 
 const Buttons: CollectionConfig = {
   slug: 'buttons',
@@ -32,6 +33,6 @@ const Buttons: CollectionConfig = {
     },
   ],
 
-}
+};
 
 export default Buttons;

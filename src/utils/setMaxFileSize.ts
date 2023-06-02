@@ -1,12 +1,12 @@
-import { Field } from "payload/types";
+import { Field } from 'payload/types';
 
 export const setMaxFileSize = (max: number) => {
 
     const bytesToMb = (bytes: number) => {
-        const toMb = bytes / (1024 * 1024)
+        const toMb = bytes / (1024 * 1024);
 
-        return Math.round(toMb * 100) / 100
-    }
+        return Math.round(toMb * 100) / 100;
+    };
 
     return ([{
         name: 'filesize',
@@ -20,7 +20,8 @@ export const setMaxFileSize = (max: number) => {
             if (val > max) {
                 throw new Error(`Images must be ${bytesToMb(max)}MB or below. This image is ${bytesToMb(val)}MB`);
             }
-            return true
+
+            return true;
         }
-    }]) as Field[]
-}
+    }]) as Field[];
+};

@@ -1,4 +1,4 @@
-import { Field } from "payload/types";
+import { Field } from 'payload/types';
 
 export const slug = [
     {
@@ -6,7 +6,7 @@ export const slug = [
         type: 'text',
         unique: true,
         admin: {
-            position: "sidebar"
+            position: 'sidebar'
         },
     }
 ] as Field[];

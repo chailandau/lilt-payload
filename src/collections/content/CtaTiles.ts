@@ -1,7 +1,8 @@
 import { CollectionConfig } from 'payload/types';
-import { link } from '../../fields/link';
-import { internalName, internalNameAsTitle } from '../../fields/internalName';
+
 import { icon } from '../../fields/icon';
+import { internalName, internalNameAsTitle } from '../../fields/internalName';
+import { link } from '../../fields/link';
 import { requiredField } from '../../utils/functions';
 
 const CtaTiles: CollectionConfig = {
@@ -20,6 +21,6 @@ const CtaTiles: CollectionConfig = {
     ...requiredField(link),
   ],
 
-}
+};
 
 export default CtaTiles;

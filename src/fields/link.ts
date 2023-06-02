@@ -1,5 +1,6 @@
-import { Field } from "payload/types";
-import { label } from "./label";
+import { Field } from 'payload/types';
+
+import { label } from './label';
 
 export const link = [
     ...label,
@@ -21,7 +22,7 @@ export const link = [
     {
         name: 'internalLink',
         type: 'relationship',
-        relationTo: "pages",
+        relationTo: 'pages',
         hasMany: false,
         admin: {
             allowCreate: false,
@@ -37,4 +38,4 @@ export const link = [
             condition: (data, siblingData) => siblingData?.linkType === 'external' ? true : false
         }
     }
-] as Field[]
+] as Field[];

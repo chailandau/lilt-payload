@@ -1,9 +1,9 @@
 import { CollectionConfig } from 'payload/types';
-import { link } from '../../fields/link';
+
 import { internalName, internalNameAsTitle } from '../../fields/internalName';
+import { placeholderImage } from '../../fields/placeholderImage';
 import { url } from '../../fields/url';
 import { requiredField } from '../../utils/functions';
-import { placeholderImage } from '../../fields/placeholderImage';
 
 const Videos: CollectionConfig = {
   slug: 'videos',
@@ -17,6 +17,6 @@ const Videos: CollectionConfig = {
     ...requiredField(placeholderImage)
   ],
 
-}
+};
 
 export default Videos;

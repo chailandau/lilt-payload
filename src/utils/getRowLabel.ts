@@ -1,8 +1,6 @@
-import { useEffect, useState, FC } from 'react';
-
 import axios from 'axios';
-
 import { RowLabelArgs } from 'payload/dist/admin/components/forms/RowLabel/types';
+import { useEffect, useState } from 'react';
 
 interface GetRowLabelProps {
     /** Name of relation field you are referencing; used to check if field is populated */
@@ -24,16 +22,16 @@ export const getRowLabel = ({
     RowLabel: ({ data, index }: RowLabelArgs) => {
         const [title, setTitle] = useState(null);
 
-        const fallbackTitle = `${defaultTitle || 'Item'} ${String(index).padStart(2, '0')}`
+        const fallbackTitle = `${defaultTitle || 'Item'} ${String(index).padStart(2, '0')}`;
 
         useEffect(() => {
             data[relationField] && (
                 axios.get(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/${collection}/${data[relationField]}`)
-                    .then((res) => { setTitle(res.data[referenceTitle]) }))
+                    .then((res) => { setTitle(res.data[referenceTitle]); }));
         }, [data[relationField]]);
 
         return data[relationField]
             ? title || fallbackTitle
-            : fallbackTitle
+            : fallbackTitle;
     }
 });

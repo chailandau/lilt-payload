@@ -1,12 +1,10 @@
 import { CollectionConfig } from 'payload/types';
 
+import { asset } from '../../fields/asset';
 import { cta } from '../../fields/cta';
 import { heading, headingAsTitle } from '../../fields/heading';
 import { richText } from '../../fields/richText';
-
 import { requiredField } from '../../utils/functions';
-import { asset } from '../../fields/asset';
-
 
 const FeaturedMedia: CollectionConfig = {
     slug: 'featured-media',
@@ -25,6 +23,6 @@ const FeaturedMedia: CollectionConfig = {
         ...cta
     ],
 
-}
+};
 
 export default FeaturedMedia;

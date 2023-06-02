@@ -2,7 +2,6 @@ import { CollectionConfig } from 'payload/types';
 
 import { slug } from '../fields/slug';
 import { title, titleAsTitle } from '../fields/title';
-
 import { generateSlug } from '../utils/generateSlug';
 
 const Pages: CollectionConfig = {
@@ -18,6 +17,6 @@ const Pages: CollectionConfig = {
     ...title,
     ...slug,
   ],
-}
+};
 
 export default Pages;

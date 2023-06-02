@@ -1,4 +1,4 @@
-import { Field } from "payload/types";
+import { Field } from 'payload/types';
 
 export const internalName = [
     {
@@ -6,8 +6,7 @@ export const internalName = [
         type: 'text',
         required: true
     }
-] as Field[]
-
+] as Field[];
 
 export const internalNameAsTitle = {
     useAsTitle: 'internalName',

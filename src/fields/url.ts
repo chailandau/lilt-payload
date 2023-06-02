@@ -1,4 +1,4 @@
-import { Field } from "payload/types";
+import { Field } from 'payload/types';
 
 export const url = [
     {
@@ -9,4 +9,4 @@ export const url = [
             description: 'Input a valid URL. Example: "https://google.com/".',
         }
     }
-] as Field[]
+] as Field[];

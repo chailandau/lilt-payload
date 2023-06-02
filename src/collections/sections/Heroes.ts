@@ -1,12 +1,11 @@
 import { CollectionConfig } from 'payload/types';
 
+import { cta, ctaTile } from '../../fields/cta';
 import { heading, headingAsTitle } from '../../fields/heading';
 import { richText } from '../../fields/richText';
-import { cta, ctaTile } from '../../fields/cta';
 import { subheading } from '../../fields/subheading';
-import { getRowLabel } from '../../utils/getRowLabel';
 import { requiredField } from '../../utils/functions';
-
+import { getRowLabel } from '../../utils/getRowLabel';
 
 const Heroes: CollectionConfig = {
   slug: 'heroes',
@@ -43,13 +42,13 @@ const Heroes: CollectionConfig = {
           defaultValue: 'button',
         },
         {
-          name: "ctaButtons",
+          name: 'ctaButtons',
           label: 'CTA Buttons',
           labels: {
             singular: 'CTA Button',
             plural: 'CTA Buttons'
           },
-          type: "array",
+          type: 'array',
           maxRows: 2,
           fields: [
             ...cta
@@ -65,13 +64,13 @@ const Heroes: CollectionConfig = {
           },
         },
         {
-          name: "ctaTiles",
+          name: 'ctaTiles',
           label: 'CTA Tiles',
           labels: {
             singular: 'CTA Tile',
             plural: 'CTA Tiles'
           },
-          type: "array",
+          type: 'array',
           maxRows: 2,
           admin: {
             condition: (data) => data?.cta?.type === 'tile' ? true : false,
@@ -90,6 +89,6 @@ const Heroes: CollectionConfig = {
     }
   ],
 
-}
+};
 
 export default Heroes;

@@ -1,14 +1,15 @@
-import { Field } from "payload/types";
+import { Field } from 'payload/types';
 
-import { getRowLabel } from "../utils/getRowLabel";
-import { icon } from "./icon";
-import { requiredField } from "../utils/functions";
-import { url } from "./url";
+import { requiredField } from '../utils/functions';
+import { getRowLabel } from '../utils/getRowLabel';
+
+import { icon } from './icon';
+import { url } from './url';
 
 export const socialLinks = [
     {
-        name: "socialLinks",
-        type: "array",
+        name: 'socialLinks',
+        type: 'array',
         maxRows: 4,
         fields: [
             ...requiredField(icon),

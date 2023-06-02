@@ -1,30 +1,24 @@
 import path from 'path';
 
 import { buildConfig } from 'payload/config';
-
 import { CollectionConfig, GlobalConfig } from 'payload/types';
 
 import Users from './collections/admin/Users';
-import Images from './collections/media/Images';
-
-import Header from './globals/Header';
-import Footer from './globals/Footer';
-
-import Pages from './templates/Pages';
-
 import Buttons from './collections/content/Buttons';
-
-import { createGroup } from './utils/createGroups';
-import Heroes from './collections/sections/Heroes';
-
-import { Icon } from './graphics/Icon';
-import { Logo } from './graphics/Logo.tsx';
 import CtaTiles from './collections/content/CtaTiles';
 import IconTiles from './collections/content/IconTiles';
-import ConversionPanels from './collections/sections/ConversionPanels';
 import Videos from './collections/content/Videos';
 import Icons from './collections/media/Icons';
+import Images from './collections/media/Images';
+import ConversionPanels from './collections/sections/ConversionPanels';
 import FeaturedMedia from './collections/sections/FeaturedMedia';
+import Heroes from './collections/sections/Heroes';
+import Footer from './globals/Footer';
+import Header from './globals/Header';
+import { Icon } from './graphics/Icon';
+import { Logo } from './graphics/Logo.tsx';
+import Pages from './templates/Pages';
+import { createGroup } from './utils/createGroups';
 
 export default buildConfig({
   admin: {
@@ -58,4 +52,4 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-})
+});

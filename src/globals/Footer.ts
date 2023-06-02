@@ -1,10 +1,10 @@
-import { GlobalConfig } from "payload/types";
+import { GlobalConfig } from 'payload/types';
 
-import { menuItem } from "../fields/menuItem";
-import { socialLinks } from "../fields/socialLinks";
+import { menuItem } from '../fields/menuItem';
+import { socialLinks } from '../fields/socialLinks';
 
 const Footer: GlobalConfig = {
-  slug: "footer",
+  slug: 'footer',
   fields: [
     ...socialLinks,
     ...menuItem,

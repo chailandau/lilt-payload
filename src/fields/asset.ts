@@ -1,5 +1,5 @@
-import { CollectionConfig } from "payload/dist/collections/config/types";
-import { Field } from "payload/types";
+import { CollectionConfig } from 'payload/dist/collections/config/types';
+import { Field } from 'payload/types';
 
 export const asset = (relationArray: CollectionConfig['slug'][]): Field[] => ([
     {

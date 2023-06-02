@@ -1,8 +1,11 @@
-import express from 'express';
 import path from 'path';
+
+import express from 'express';
 import payload from 'payload';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
+
 const app = express();
 
 // Redirect root to Admin panel
@@ -19,11 +22,11 @@ const start = async () => {
     mongoURL: process.env.MONGODB_URI,
     express: app,
     onInit: async () => {
-      payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
+      payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
     },
-  })
+  });
 
   app.listen(3000);
-}
+};
 
 start();
