@@ -2,6 +2,7 @@ import { CollectionConfig } from 'payload/types';
 import { link } from '../../fields/link';
 import { internalName, internalNameAsTitle } from '../../fields/internalName';
 import { icon } from '../../fields/icon';
+import { requiredField } from '../../utils/functions';
 
 const CtaTiles: CollectionConfig = {
   slug: 'cta-tiles',
@@ -15,8 +16,8 @@ const CtaTiles: CollectionConfig = {
   },
   fields: [
     ...internalName,
-    ...icon,
-    ...link,
+    ...requiredField(icon),
+    ...requiredField(link),
   ],
 
 }

@@ -1,18 +1,22 @@
 import { CollectionConfig } from 'payload/types';
 
-import { requiredField } from '../../utils/functions';
+import { cta } from '../../fields/cta';
 import { heading, headingAsTitle } from '../../fields/heading';
+import { richText } from '../../fields/richText';
+
+import { requiredField } from '../../utils/functions';
 
 
 const ConversionPanels: CollectionConfig = {
     slug: 'conversion-panels',
     admin: {
         ...headingAsTitle,
-        defaultColumns: ['label', 'icon']
+        defaultColumns: ['heading', 'cta', 'updatedAt']
     },
     fields: [
         ...requiredField(heading()),
-
+        ...richText,
+        ...requiredField(cta)
     ],
 
 }

@@ -6,6 +6,7 @@ import { richText } from '../../fields/richText';
 import { cta, ctaTile } from '../../fields/cta';
 import { subheading } from '../../fields/subheading';
 import { getRowLabel } from '../../utils/getRowLabel';
+import { requiredField } from '../../utils/functions';
 
 
 const Heroes: CollectionConfig = {
@@ -20,7 +21,7 @@ const Heroes: CollectionConfig = {
   },
   fields: [
     ...internalName,
-    ...heading('h1'),
+    ...requiredField(heading('h1')),
     ...subheading,
     ...richText,
     {

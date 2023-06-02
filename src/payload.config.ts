@@ -5,7 +5,7 @@ import { buildConfig } from 'payload/config';
 import { CollectionConfig, GlobalConfig } from 'payload/types';
 
 import Users from './collections/admin/Users';
-import Images from './collections/content/Images';
+import Images from './collections/media/Images';
 
 import Header from './globals/Header';
 import Footer from './globals/Footer';
@@ -21,6 +21,9 @@ import { Icon } from './graphics/Icon';
 import { Logo } from './graphics/Logo.tsx';
 import CtaTiles from './collections/content/CtaTiles';
 import IconTiles from './collections/content/IconTiles';
+import ConversionPanels from './collections/sections/ConversionPanels';
+import Videos from './collections/content/Videos';
+import Icons from './collections/media/Icons';
 
 export default buildConfig({
   admin: {
@@ -40,8 +43,9 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
-    ...createGroup([Heroes], 'Sections') as CollectionConfig[],
-    ...createGroup([Buttons, CtaTiles, IconTiles, Images], 'Content') as CollectionConfig[],
+    ...createGroup([ConversionPanels, Heroes], 'Sections') as CollectionConfig[],
+    ...createGroup([Buttons, CtaTiles, IconTiles], 'Content') as CollectionConfig[],
+    ...createGroup([Icons, Images, Videos], 'Media') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],
   ],
   globals: [

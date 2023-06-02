@@ -4,7 +4,7 @@ export const icon = [
     {
         name: "icon",
         type: "relationship",
-        relationTo: "images",
+        relationTo: "icons",
         hasMany: false
     }
 ] as Field[];

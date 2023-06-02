@@ -2,6 +2,8 @@ import { Field } from "payload/types";
 
 import { getRowLabel } from "../utils/getRowLabel";
 import { icon } from "./icon";
+import { requiredField } from "../utils/functions";
+import { url } from "./url";
 
 export const socialLinks = [
     {
@@ -9,16 +11,13 @@ export const socialLinks = [
         type: "array",
         maxRows: 4,
         fields: [
-            ...icon,
-            {
-                name: "link",
-                type: "text"
-            }
+            ...requiredField(icon),
+            ...requiredField(url)
         ],
         admin: {
             components: getRowLabel({
                 relationField: 'icon',
-                collection: 'images',
+                collection: 'icons',
                 referenceTitle: 'alt',
                 defaultTitle: 'Social link'
             }),
