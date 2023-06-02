@@ -6,10 +6,10 @@ import { requiredField } from '../../utils/functions';
 import { placeholderImage } from '../../fields/placeholderImage';
 
 const Videos: CollectionConfig = {
-  slug: 'Videos',
+  slug: 'videos',
   admin: {
     ...internalNameAsTitle,
-    defaultColumns: ['internalName', 'url']
+    defaultColumns: ['internalName', 'url', 'placeholderImage']
   },
   fields: [
     ...internalName,

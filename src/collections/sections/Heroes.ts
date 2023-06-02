@@ -1,7 +1,6 @@
 import { CollectionConfig } from 'payload/types';
 
-import { internalName, internalNameAsTitle } from '../../fields/internalName';
-import { heading } from '../../fields/heading';
+import { heading, headingAsTitle } from '../../fields/heading';
 import { richText } from '../../fields/richText';
 import { cta, ctaTile } from '../../fields/cta';
 import { subheading } from '../../fields/subheading';
@@ -16,11 +15,10 @@ const Heroes: CollectionConfig = {
     plural: 'Heroes'
   },
   admin: {
-    ...internalNameAsTitle,
-    defaultColumns: ['internalName', 'heading', 'updatedAt']
+    ...headingAsTitle,
+    defaultColumns: ['heading', 'updatedAt']
   },
   fields: [
-    ...internalName,
     ...requiredField(heading('h1')),
     ...subheading,
     ...richText,

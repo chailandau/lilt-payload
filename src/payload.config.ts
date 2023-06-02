@@ -24,6 +24,7 @@ import IconTiles from './collections/content/IconTiles';
 import ConversionPanels from './collections/sections/ConversionPanels';
 import Videos from './collections/content/Videos';
 import Icons from './collections/media/Icons';
+import FeaturedMedia from './collections/sections/FeaturedMedia';
 
 export default buildConfig({
   admin: {
@@ -43,7 +44,7 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
-    ...createGroup([ConversionPanels, Heroes], 'Sections') as CollectionConfig[],
+    ...createGroup([ConversionPanels, FeaturedMedia, Heroes], 'Sections') as CollectionConfig[],
     ...createGroup([Buttons, CtaTiles, IconTiles], 'Content') as CollectionConfig[],
     ...createGroup([Icons, Images, Videos], 'Media') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],
