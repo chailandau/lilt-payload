@@ -1,8 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
-import { asset } from '../../fields/asset';
-import { cta } from '../../fields/cta';
 import { heading, headingAsTitle } from '../../fields/heading';
+import { reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
 import { requiredField } from '../../utils/functions';
 
@@ -19,8 +18,8 @@ const FeaturedMedia: CollectionConfig = {
     fields: [
         ...requiredField(heading()),
         ...richText,
-        ...requiredField(asset(['images', 'videos'])),
-        ...cta
+        ...reference({ name: 'asset', relationTo: ['images', 'videos'], required: true }),
+        ...reference({ name: 'callToAction', relationTo: 'buttons' }),
     ],
 
 };

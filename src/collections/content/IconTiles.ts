@@ -14,7 +14,6 @@ const IconTiles: CollectionConfig = {
         ...requiredField(label),
         ...requiredField(icon),
     ],
-
 };
 
 export default IconTiles;

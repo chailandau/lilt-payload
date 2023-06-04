@@ -13,6 +13,7 @@ import Images from './collections/media/Images';
 import ConversionPanels from './collections/sections/ConversionPanels';
 import FeaturedMedia from './collections/sections/FeaturedMedia';
 import Heroes from './collections/sections/Heroes';
+import TileGrids from './collections/sections/TileGrids';
 import Footer from './globals/Footer';
 import Header from './globals/Header';
 import { Icon } from './graphics/Icon';
@@ -38,7 +39,7 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
-    ...createGroup([ConversionPanels, FeaturedMedia, Heroes], 'Sections') as CollectionConfig[],
+    ...createGroup([ConversionPanels, FeaturedMedia, Heroes, TileGrids], 'Sections') as CollectionConfig[],
     ...createGroup([Buttons, CtaTiles, IconTiles], 'Content') as CollectionConfig[],
     ...createGroup([Icons, Images, Videos], 'Media') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],

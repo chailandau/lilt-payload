@@ -1,13 +1,13 @@
 import { GlobalConfig } from 'payload/types';
 
-import { cta } from '../fields/cta';
 import { menuItem } from '../fields/menuItem';
+import { reference } from '../fields/reference';
 
 const Header: GlobalConfig = {
   slug: 'header',
   fields: [
     ...menuItem,
-    ...cta
+    ...reference({ name: 'callToAction', relationTo: 'buttons' }),
   ],
 
 };

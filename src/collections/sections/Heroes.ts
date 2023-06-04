@@ -1,7 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
-import { cta, ctaTile } from '../../fields/cta';
 import { heading, headingAsTitle } from '../../fields/heading';
+import { reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
 import { subheading } from '../../fields/subheading';
 import { requiredField } from '../../utils/functions';
@@ -51,7 +51,7 @@ const Heroes: CollectionConfig = {
           type: 'array',
           maxRows: 2,
           fields: [
-            ...cta
+            ...reference({ name: 'callToAction', relationTo: 'buttons' }),
           ],
           admin: {
             condition: (data) => data?.cta?.type === 'button' ? true : false,
@@ -82,7 +82,7 @@ const Heroes: CollectionConfig = {
             }),
           },
           fields: [
-            ...ctaTile
+            ...reference({ name: 'callToActionTile', relationTo: 'cta-tiles' }),
           ]
         }
       ],
