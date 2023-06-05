@@ -10,6 +10,14 @@ const Icons: CollectionConfig = {
     upload: {
         staticURL: '/icons',
         staticDir: 'icons',
+        imageSizes: [
+            {
+                name: 'thumbnail',
+                width: 175,
+                height: 175,
+                position: 'center',
+            },
+        ],
         adminThumbnail: 'thumbnail',
         mimeTypes: ['image/*'],
     },

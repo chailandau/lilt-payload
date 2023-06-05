@@ -14,10 +14,10 @@ import ConversionPanels from './collections/sections/ConversionPanels';
 import FeaturedMedia from './collections/sections/FeaturedMedia';
 import Heroes from './collections/sections/Heroes';
 import TileGrids from './collections/sections/TileGrids';
+import { Icon } from './custom/Icon';
+import { Logo } from './custom/Logo';
 import Footer from './globals/Footer';
 import Header from './globals/Header';
-import { Icon } from './graphics/Icon';
-import { Logo } from './graphics/Logo.tsx';
 import Pages from './templates/Pages';
 import { createGroup } from './utils/createGroups';
 

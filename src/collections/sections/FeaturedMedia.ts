@@ -1,9 +1,10 @@
 import { CollectionConfig } from 'payload/types';
 
 import { heading, headingAsTitle } from '../../fields/heading';
-import { reference } from '../../fields/reference';
+import { imageReference, reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
 import { requiredField } from '../../utils/functions';
+import { toggleFields } from '../../utils/toggleFields';
 
 const FeaturedMedia: CollectionConfig = {
     slug: 'featured-media',
@@ -13,12 +14,25 @@ const FeaturedMedia: CollectionConfig = {
     },
     admin: {
         ...headingAsTitle,
-        defaultColumns: ['heading', 'cta', 'updatedAt']
+        defaultColumns: ['heading', 'assetType', 'cta', 'updatedAt']
     },
     fields: [
         ...requiredField(heading()),
         ...richText,
-        ...reference({ name: 'asset', relationTo: ['images', 'videos'], required: true }),
+        ...toggleFields({
+            radioGroupName: 'assetType',
+            fieldChoices: [
+                {
+                    label: 'Image',
+                    field: imageReference({ name: 'image', relationTo: 'images' })
+                },
+                {
+                    label: 'Video',
+                    field: reference({ name: 'video', relationTo: 'videos' })
+                },
+            ],
+            defaultValue: 'image'
+        }),
         ...reference({ name: 'callToAction', relationTo: 'buttons' }),
     ],
 

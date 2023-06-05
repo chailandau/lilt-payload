@@ -8,12 +8,12 @@ const IconTiles: CollectionConfig = {
     slug: 'icon-tiles',
     admin: {
         ...labelAsTitle,
-        defaultColumns: ['label', 'icon']
+        defaultColumns: ['label', 'icon'],
     },
     fields: [
         ...requiredField(label),
         ...requiredField(icon),
-    ],
+    ]
 };
 
 export default IconTiles;

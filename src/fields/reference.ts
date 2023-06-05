@@ -33,6 +33,15 @@ export const reference = ({ name, relationTo, required = false }: ReferenceProps
     },
 ]) as Field[];
 
+export const imageReference = ({ name, relationTo, required = false }: ReferenceProps): Field[] => ([
+    {
+        name,
+        type: 'upload',
+        relationTo,
+        required
+    },
+]) as Field[];
+
 export const referenceArray = ({ name, maxRows, relationTo, referenceTitle, defaultTitle, required = false }: ReferenceArrayProps): Field[] => ([
     {
         name: `${name}s`,

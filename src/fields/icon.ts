@@ -1,10 +1,17 @@
 import { Field } from 'payload/types';
 
+import { ThumbnailCell } from '../custom/Thumbnail/Cell';
+
 export const icon = [
     {
         name: 'icon',
-        type: 'relationship',
+        type: 'upload',
         relationTo: 'icons',
-        hasMany: false
+        required: true,
+        admin: {
+            components: {
+                Cell: ThumbnailCell
+            }
+        }
     }
 ] as Field[];
