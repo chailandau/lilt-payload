@@ -19,7 +19,7 @@ const TileGrids: CollectionConfig = {
             maxRows: 8,
             relationTo: 'icon-tiles',
             referenceTitle: 'label',
-            defaultTitle: 'Icon Title',
+            defaultTitle: 'Icon Tile',
             required: true
         }),
         ...reference({ name: 'callToAction', relationTo: 'buttons', required: true }),
