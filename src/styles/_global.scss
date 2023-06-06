@@ -5,3 +5,9 @@ html[data-theme="dark"] aside.nav header a svg g {
 label.field-label .required {
     font-size: rem(24);
 }
+
+.file__thumbnail {
+    max-width: rem(100);
+    display: block;
+    height: unset;
+}

@@ -9,7 +9,6 @@ const Header: GlobalConfig = {
     ...menuItem,
     ...reference({ name: 'callToAction', relationTo: 'buttons' }),
   ],
-
 };
 
 export default Header;

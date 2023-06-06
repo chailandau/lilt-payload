@@ -35,6 +35,7 @@ export const toggleFields = ({
             fieldChoice.field.flatMap(config => ({
                 ...config,
                 admin: {
+                    ...config.admin,
                     condition: (data) => data?.[radioGroupName] === fieldChoice.label.toLowerCase() ? true : false
                 }
             }))

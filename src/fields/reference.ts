@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload/dist/collections/config/types';
 import { Field } from 'payload/types';
 
+import { ThumbnailCell } from '../custom/ThumbnailCell';
 import { getRowLabel } from '../utils/getRowLabel';
 
 interface ReferenceProps {
@@ -38,7 +39,12 @@ export const imageReference = ({ name, relationTo, required = false }: Reference
         name,
         type: 'upload',
         relationTo,
-        required
+        required,
+        admin: {
+            components: {
+                Cell: ThumbnailCell
+            }
+        }
     },
 ]) as Field[];
 

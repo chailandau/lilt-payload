@@ -1,6 +1,5 @@
+import { useListRelationships } from 'payload/dist/admin/components/views/collections/List/RelationshipProvider';
 import React, { useEffect } from 'react';
-
-import { useListRelationships } from '../../../node_modules/payload/dist/admin/components/views/collections/List/RelationshipProvider';
 
 export const ThumbnailCell = (props) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

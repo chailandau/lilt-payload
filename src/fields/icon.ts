@@ -1,6 +1,6 @@
 import { Field } from 'payload/types';
 
-import { ThumbnailCell } from '../custom/Thumbnail/Cell';
+import { ThumbnailCell } from '../custom/ThumbnailCell';
 
 export const icon = [
     {

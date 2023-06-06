@@ -1,12 +1,16 @@
 import { Field } from 'payload/types';
 
+import { ThumbnailCell } from '../custom/ThumbnailCell';
+
 export const placeholderImage = [
     {
         name: 'placeholderImage',
-        type: 'relationship',
+        type: 'upload',
         relationTo: 'images',
-        hasMany: false,
         admin: {
+            components: {
+                Cell: ThumbnailCell
+            },
             description: 'Image displayed before user clicks play button. Typically a frame from the video.'
         }
     }
