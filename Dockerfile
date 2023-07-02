@@ -11,14 +11,15 @@ RUN yarn build
 
 FROM base as runtime
 
-ENV NODE_ENV=production
-ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
 
+ENV PAYLOAD_CONFIG_PATH=/home/node/dist/payload.config.js
+ENV NODE_ENV=production
 
 WORKDIR /home/node
 COPY package*.json  ./
 
 RUN yarn install --production
+
 COPY --from=builder /home/node/dist ./dist
 COPY --from=builder /home/node/build ./build
 
