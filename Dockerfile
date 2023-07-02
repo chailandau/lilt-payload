@@ -18,6 +18,8 @@ ENV NODE_ENV=production
 WORKDIR /home/node
 COPY package*.json  ./
 
+RUN yarn global add sass
+
 RUN yarn install --production
 
 COPY --from=builder /home/node/dist ./dist
