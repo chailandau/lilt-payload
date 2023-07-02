@@ -1,6 +1,6 @@
 # Long Island Laser Tag Payload
 
-Payload is a config-based TypeScript headless CMS. It is being used in conjuction with NextJS to create a headless build for Long Island Laser Tag.
+Payload is a config-based TypeScript headless CMS. It is being used in conjunction with NextJS to create a headless build for Long Island Laser Tag.
 
 ## How to Use
 
@@ -16,4 +16,4 @@ Ensure you are passing all needed environment variables when starting up your co
 
 The 3 typical env vars will be `MONGODB_URI`, `PAYLOAD_SECRET`, and `PAYLOAD_CONFIG_PATH`
 
-`docker run --env-file .env -p 3001:3001 my-tag`
+`docker run --env-file .env -p 3000:3000 my-tag`
