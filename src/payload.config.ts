@@ -58,7 +58,6 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'payload-schema.graphql'),
   },
   cors: [
-    'http://localhost:3000',
-    'http://localhost:3001'
+    process.env.PAYLOAD_PUBLIC_SERVER_URL
   ]
 });

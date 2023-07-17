@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useConfig } from 'payload/components/utilities';
 import React, { useEffect, useState } from 'react';
 
 import { capitalizeWord } from './functions';
@@ -17,12 +18,14 @@ export const getMenuItemLabel = (defaultTitle: string) => ({
                 </>
             );
 
+            const { serverURL } = useConfig();
+
             useEffect(() => {
                 if (data?.linkType === 'internal') {
                     if(data?.internalLink) {
                         data?.overridePageName
                           ?  setTitle(titleWithType(data?.internalCustomLabel || fallbackTitle))
-                        : axios.get(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/pages/${data.internalLink}`)
+                        : axios.get(`${serverURL}/api/pages/${data.internalLink}`)
                             .then((res) => {setTitle(titleWithType(res?.data?.title));
                             });
                     } else {

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useConfig } from 'payload/components/utilities';
 import { RowLabelArgs } from 'payload/dist/admin/components/forms/RowLabel/types';
 import { useEffect, useState } from 'react';
 
@@ -24,9 +25,11 @@ export const getRowLabel = ({
 
         const fallbackTitle = `${defaultTitle || 'Item'} ${String(index).padStart(2, '0')}`;
 
+        const { serverURL } = useConfig();
+
         useEffect(() => {
             data[relationField] && (
-                axios.get(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/${collection}/${data[relationField]}`)
+                axios.get(`${serverURL}/api/${collection}/${data[relationField]}`)
                     .then((res) => { setTitle(res.data[referenceTitle]); }));
         }, [data[relationField]]);
 
