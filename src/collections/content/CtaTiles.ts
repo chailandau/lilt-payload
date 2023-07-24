@@ -18,7 +18,7 @@ const CtaTiles: CollectionConfig = {
   fields: [
     ...internalName,
     ...requiredField(icon),
-    ...requiredField(link),
+    ...requiredField(link()),
   ],
 
 };

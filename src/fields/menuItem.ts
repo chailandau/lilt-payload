@@ -31,15 +31,7 @@ export const menuItem = [
             components: getMenuItemLabel('Menu item'),
         },
         fields: [
-            ...link.map((field: TextField | RadioField) => {
-                if (field.name === 'label') {
-                    return {
-                        ...field,
-                        admin: {
-                            condition: (data, siblingData: { linkType: string }) => siblingData?.linkType === 'internal' ? false : true
-                        }
-                    };
-                }
+            ...link({ hideInternalLabel: true }).map((field: TextField | RadioField) => {
                 if (field.name === 'linkType' && 'options' in field) {
                     return {
                         ...field,
@@ -60,19 +52,9 @@ export const menuItem = [
             {
                 name: 'submenuItems',
                 type: 'array',
-                fields: [
-                    ...link.map((field: TextField) => {
-                        if (field.name === 'label') {
-                            return {
-                                ...field,
-                                admin: {
-                                    condition: (data, siblingData: { linkType: string }) => siblingData?.linkType === 'internal' ? false : true
-                                }
-                            };
-                        }
 
-                        return field;
-                    }),
+                fields: [
+                    ...link({ hideInternalLabel: true }),
                     ...menuLinkFields
                 ],
                 admin: {
