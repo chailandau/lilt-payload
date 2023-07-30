@@ -7,7 +7,7 @@ import { link } from '../../fields/link';
 import { capitalizeWord } from '../../utils/functions';
 
 const getPageTitle = async ({ data }: { data: Partial<Button> }) => {
-  if (data?.internalLink) {
+  if (data?.linkType === 'internal' && data?.internalLink) {
     const findPage = await payload.findByID({
       collection: 'pages',
       id: data.internalLink as string
