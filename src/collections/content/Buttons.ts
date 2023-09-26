@@ -10,14 +10,13 @@ const getPageTitle = async ({ data }: { data: Partial<Button> }) => {
   if (data?.linkType === 'internal' && data?.internalLink) {
     const findPage = await payload.findByID({
       collection: 'pages',
-      id: data.internalLink as string
+      id: data?.internalLink as string
     });
 
     return `${findPage?.title} page` || 'Undefined';
   } else {
     return data?.externalLink || 'Undefined';
   }
-
 };
 
 const Buttons: CollectionConfig = {

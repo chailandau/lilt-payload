@@ -16,7 +16,10 @@ import ConversionPanels from './collections/sections/ConversionPanels';
 import FeaturedMedia from './collections/sections/FeaturedMedia';
 import FeatureGrids from './collections/sections/FeatureGrids';
 import Heroes from './collections/sections/Heroes';
+import IconTileGrids from './collections/sections/IconTileGrids';
+import Processes from './collections/sections/Processes';
 import Switchbacks from './collections/sections/Switchbacks';
+import TextGrids from './collections/sections/TextGrids';
 import TileGrids from './collections/sections/TileGrids';
 import { Icon } from './custom/Icon';
 import { Logo } from './custom/Logo';
@@ -43,7 +46,7 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
-    ...createGroup([Accordions, ConversionPanels, FeaturedMedia, FeatureGrids, Heroes, Switchbacks, TileGrids], 'Sections') as CollectionConfig[],
+    ...createGroup([Accordions, ConversionPanels, FeaturedMedia, FeatureGrids, Heroes, IconTileGrids, Processes, Switchbacks, TextGrids, TileGrids], 'Sections') as CollectionConfig[],
     ...createGroup([Buttons, CtaTiles, FeatureTiles, IconTiles], 'Content') as CollectionConfig[],
     ...createGroup([Icons, Images, Videos], 'Media') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],

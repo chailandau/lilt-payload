@@ -7,7 +7,8 @@ export const richText = [
         admin: {
             elements: [
                 'ul',
-                'ol'
+                'ol',
+                'link'
             ],
             leaves: [
                 'bold',

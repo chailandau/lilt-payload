@@ -35,22 +35,35 @@ export const requiredField = (fieldConfig: Field[]): Field[] => {
 };
 
 /**
- * Validates if string is a valid http or https URL with a TLD.
+ * Validates if string is a valid http or https URL with a TLD or a mailto.
  *
- * @param {string} str - String to be validated as a URL.
- * @return {boolean} Returns true if the string is a valid URL, otherwise returns false.
+ * @param str - String to be validated as a URL.
+ * @returns true if the string is a valid URL, otherwise returns false.
  */
-export const isValidUrl = (str: string): boolean => {
+export const isValidUrl = (
+    str: string
+): boolean => {
+
     try {
         const url = new URL(str);
+       
+            if (url.protocol !== 'mailto:' && url.protocol !== 'tel:') {
+                const originSplit = url.origin.split('.');
+                if (originSplit.length === 1 || originSplit[1] === '') {
+                    return false;
+                }            }
 
-        const originSplit = url.origin.split('.');
-        if (originSplit.length === 1 || originSplit[1] === '') {
-            return false;
-        }
-
-        return url.protocol === 'http:' || url.protocol === 'https:';
+            return (
+                url.protocol === 'http:' ||
+                url.protocol === 'https:' ||
+                url.protocol === 'mailto:' ||
+                url.protocol === 'tel:'
+            );
+       
     } catch (err) {
+        console.error(err);
+
         return false;
     }
 };
+

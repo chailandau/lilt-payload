@@ -1,7 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
+import { heading } from '../../fields/heading';
 import { internalName, internalNameAsTitle } from '../../fields/internalName';
-import { referenceArray } from '../../fields/reference';
 import { requiredField } from '../../utils/functions';
 
 const FeatureGrids: CollectionConfig = {
@@ -12,14 +12,15 @@ const FeatureGrids: CollectionConfig = {
     },
     fields: [
         ...requiredField(internalName),
-        ...referenceArray({
-            name: 'featureTile',
-            maxRows: 4,
+        ...heading('h2'),
+        {
+            name: 'featureTiles',
+            type: 'relationship',
             relationTo: 'feature-tiles',
-            referenceTitle: 'heading',
-            defaultTitle: 'Feature Tile',
+            hasMany: true,
+            maxRows: 6,
             required: true
-        }),
+        }
     ],
 
 };

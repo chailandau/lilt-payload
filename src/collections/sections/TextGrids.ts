@@ -5,8 +5,8 @@ import { reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
 import { requiredField } from '../../utils/functions';
 
-const TileGrids: CollectionConfig = {
-    slug: 'tile-grids',
+const TextGrids: CollectionConfig = {
+    slug: 'text-grids',
     admin: {
         ...headingAsTitle,
         defaultColumns: ['heading', 'cta', 'updatedAt']
@@ -15,25 +15,27 @@ const TileGrids: CollectionConfig = {
         ...requiredField(heading()),
         ...richText,
         {
-            name: 'tiles',
+            name: 'textTiles',
             type: 'array',
-            maxRows: 6,
+            maxRows: 12,
             admin : {
                 components: {
                     RowLabel: ({ data }) => {
-                        const fallbackTitle = 'Tile';
+                        const fallbackTitle = 'Text Tile';
 
-                        return data?.heading || fallbackTitle;
+                        return data?.text || fallbackTitle;
                     }
                 }
             },
             fields: [
-               ...heading('h3'),
-               ...richText
+                {
+                    name: 'text',
+                    type: 'text'
+                }
             ]
         },
         ...reference({ name: 'callToAction', relationTo: 'buttons' }),
     ]
 };
 
-export default TileGrids;
+export default TextGrids;
