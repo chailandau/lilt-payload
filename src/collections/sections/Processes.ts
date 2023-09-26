@@ -1,39 +1,39 @@
 import { CollectionConfig } from 'payload/types';
 
-import { heading, headingAsTitle } from '../../fields/heading';
+import { heading } from '../../fields/heading';
+import { internalName, internalNameAsTitle } from '../../fields/internalName';
 import { reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
 import { requiredField } from '../../utils/functions';
 
-const TileGrids: CollectionConfig = {
-    slug: 'tile-grids',
+const Processes: CollectionConfig = {
+    slug: 'processes',
     admin: {
-        ...headingAsTitle,
-        defaultColumns: ['heading', 'cta', 'updatedAt']
+        ...internalNameAsTitle,
+        defaultColumns: ['internalName', 'cta', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
-        ...richText,
+        ...internalName,
         {
-            name: 'tiles',
+            name: 'steps',
             type: 'array',
             maxRows: 6,
             admin : {
                 components: {
                     RowLabel: ({ data }) => {
-                        const fallbackTitle = 'Tile';
+                        const fallbackTitle = 'Step';
 
                         return data?.heading || fallbackTitle;
                     }
                 }
             },
             fields: [
-               ...heading('h3'),
-               ...richText
+                ...requiredField(heading('h2')),
+                ...richText
             ]
         },
-        ...reference({ name: 'callToAction', relationTo: 'buttons' }),
+        ...reference({ name: 'callToAction', relationTo: 'buttons', required: true }),
     ]
 };
 
-export default TileGrids;
+export default Processes;
