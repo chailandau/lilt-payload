@@ -1,12 +1,12 @@
 import payload from 'payload';
-import { Button } from 'payload/generated-types';
+import { CallToAction } from 'payload/generated-types';
 import { CollectionConfig } from 'payload/types';
 
 import { LinkDestinationCell } from '../../custom/LinkDestinationCell';
 import { link } from '../../fields/link';
 import { capitalizeWord } from '../../utils/functions';
 
-const getPageTitle = async ({ data }: { data: Partial<Button> }) => {
+const getPageTitle = async ({ data }: { data: Partial<CallToAction> }) => {
   if (data?.linkType === 'internal' && data?.internalLink) {
     const findPage = await payload.findByID({
       collection: 'pages',
@@ -19,8 +19,8 @@ const getPageTitle = async ({ data }: { data: Partial<Button> }) => {
   }
 };
 
-const Buttons: CollectionConfig = {
-  slug: 'buttons',
+const CallToActions: CollectionConfig = {
+  slug: 'call-to-actions',
   admin: {
     useAsTitle: 'fullTitle',
     defaultColumns: ['label', 'linkType', 'linksTo', 'color', 'updatedAt'],
@@ -64,11 +64,6 @@ const Buttons: CollectionConfig = {
       },
       hooks: {
         beforeChange: [
-          ({ siblingData }) => {
-            delete siblingData['fullTitle'];
-          }
-        ],
-        afterRead: [
           async ({ data }) => `${data?.label} (${data?.linkType}) ▸ ${await getPageTitle({ data })} ▸ ${capitalizeWord(data?.color)}`
         ],
       },
@@ -77,4 +72,4 @@ const Buttons: CollectionConfig = {
 
 };
 
-export default Buttons;
+export default CallToActions;

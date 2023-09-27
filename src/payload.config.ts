@@ -4,7 +4,7 @@ import { buildConfig } from 'payload/config';
 import { CollectionConfig, GlobalConfig } from 'payload/types';
 
 import Users from './collections/admin/Users';
-import Buttons from './collections/content/Buttons';
+import CallToActions from './collections/content/CallToActions';
 import CtaTiles from './collections/content/CtaTiles';
 import FeatureTiles from './collections/content/FeatureTiles';
 import IconTiles from './collections/content/IconTiles';
@@ -47,7 +47,7 @@ export default buildConfig({
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
     ...createGroup([Accordions, ConversionPanels, FeaturedMedia, FeatureGrids, Heroes, IconTileGrids, Processes, Switchbacks, TextGrids, TileGrids], 'Sections') as CollectionConfig[],
-    ...createGroup([Buttons, CtaTiles, FeatureTiles, IconTiles], 'Content') as CollectionConfig[],
+    ...createGroup([CallToActions, CtaTiles, FeatureTiles, IconTiles], 'Content') as CollectionConfig[],
     ...createGroup([Icons, Images, Videos], 'Media') as CollectionConfig[],
     ...createGroup([Users], 'Admin') as CollectionConfig[],
   ],
