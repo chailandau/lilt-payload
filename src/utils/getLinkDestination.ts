@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useConfig } from 'payload/components/utilities';
-import { Button } from 'payload/generated-types';
+import { CallToAction } from 'payload/generated-types';
 import { useEffect, useState } from 'react';
 
 /**
@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
  * @param {Object} linkRowData - Data object representing a row.
  * @return {string} Link destination.
  */
-export const getLinkDestination = (linkRowData: Partial<Button>): string => {
+export const getLinkDestination = (linkRowData: Partial<CallToAction>): string => {
     const [linkDestination, setLinkDestination] = useState('');
 
     const { serverURL } = useConfig();

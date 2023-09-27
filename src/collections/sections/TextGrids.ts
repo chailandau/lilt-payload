@@ -34,7 +34,7 @@ const TextGrids: CollectionConfig = {
                 }
             ]
         },
-        ...reference({ name: 'callToAction', relationTo: 'buttons' }),
+        ...reference({ name: 'callToAction', relationTo: 'call-to-actions' }),
     ]
 };
 

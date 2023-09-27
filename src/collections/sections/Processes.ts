@@ -32,7 +32,7 @@ const Processes: CollectionConfig = {
                 ...richText
             ]
         },
-        ...reference({ name: 'callToAction', relationTo: 'buttons', required: true }),
+        ...reference({ name: 'callToAction', relationTo: 'call-to-actions', required: true }),
     ]
 };
 

@@ -51,13 +51,13 @@ const Heroes: CollectionConfig = {
           type: 'array',
           maxRows: 2,
           fields: [
-            ...reference({ name: 'callToAction', relationTo: 'buttons' }),
+            ...reference({ name: 'callToAction', relationTo: 'call-to-actions' }),
           ],
           admin: {
             condition: (data) => data?.cta?.type === 'button' ? true : false,
             components: getRowLabel({
               relationField: 'callToAction',
-              collection: 'buttons',
+              collection: 'call-to-actions',
               referenceTitle: 'internalName',
               defaultTitle: 'CTA Button'
             }),

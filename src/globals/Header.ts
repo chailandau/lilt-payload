@@ -7,7 +7,7 @@ const Header: GlobalConfig = {
   slug: 'header',
   fields: [
     ...menuItem,
-    ...reference({ name: 'callToAction', relationTo: 'buttons' }),
+    ...reference({ name: 'callToAction', relationTo: 'call-to-actions' }),
   ],
 };
 
