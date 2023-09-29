@@ -1,19 +1,20 @@
 import { CollectionConfig } from 'payload/types';
 
-import { heading, headingAsTitle } from '../../fields/heading';
+import { heading } from '../../fields/heading';
+import { internalName, internalNameAsTitle } from '../../fields/internalName';
 import { reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
-import { requiredField } from '../../utils/functions';
 
 const TextGrids: CollectionConfig = {
     slug: 'text-grids',
     admin: {
-        ...headingAsTitle,
-        defaultColumns: ['heading', 'cta', 'updatedAt']
+        ...internalNameAsTitle,
+        defaultColumns: ['internalName', 'heading', 'cta', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
-        ...richText,
+        ...internalName,
+        ...heading(),
+        ...richText(),
         {
             name: 'textTiles',
             type: 'array',

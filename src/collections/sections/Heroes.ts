@@ -20,7 +20,7 @@ const Heroes: CollectionConfig = {
   fields: [
     ...requiredField(heading('h1')),
     ...subheading,
-    ...richText,
+    ...richText(),
     {
       name: 'cta',
       label: 'CTA',

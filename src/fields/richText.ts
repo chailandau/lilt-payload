@@ -1,8 +1,8 @@
 import { Field } from 'payload/types';
 
-export const richText = [
+export const richText = (name = 'content') => [
     {
-        name: 'content',
+        name,
         type: 'richText',
         admin: {
             elements: [
