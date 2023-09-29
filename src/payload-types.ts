@@ -241,7 +241,6 @@ export interface Hero {
       id?: string;
     }[];
   };
-  homepage?: boolean;
   updatedAt: string;
   createdAt: string;
 }

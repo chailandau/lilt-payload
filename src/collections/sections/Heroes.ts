@@ -85,15 +85,11 @@ const Heroes: CollectionConfig = {
             ...reference({ name: 'callToActionTile', relationTo: 'cta-tiles' }),
           ]
         },
-             
+        
       ],
     },
-    {
-      name: 'homepage',
-      type: 'checkbox'
-  }
   ],
-
+  
 };
 
 export default Heroes;
