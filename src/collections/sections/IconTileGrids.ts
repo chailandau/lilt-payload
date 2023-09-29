@@ -13,7 +13,7 @@ const IconTileGrids: CollectionConfig = {
     },
     fields: [
         ...requiredField(heading()),
-        ...richText,
+        ...richText(),
         {
             name: 'iconTiles',
             type: 'relationship',

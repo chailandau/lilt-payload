@@ -3,6 +3,7 @@ import { CollectionConfig } from 'payload/types';
 import { heading } from '../../fields/heading';
 import { image } from '../../fields/image';
 import { internalName, internalNameAsTitle } from '../../fields/internalName';
+import { reference } from '../../fields/reference';
 import { richText } from '../../fields/richText';
 import { requiredField } from '../../utils/functions';
 
@@ -32,7 +33,8 @@ const Switchbacks: CollectionConfig = {
             defaultValue: 'left'
         },
         ...heading(),
-        ...richText,
+        ...richText(),
+        ...reference({ name: 'callToAction', relationTo: 'call-to-actions'}),
     ],
 
 };

@@ -16,6 +16,7 @@ export interface Config {
     heroes: Hero;
     'icon-tile-grids': IconTileGrid;
     processes: Process;
+    specials: Special;
     switchbacks: Switchback;
     'text-grids': TextGrid;
     'tile-grids': TileGrid;
@@ -37,62 +38,86 @@ export interface Page {
   id: string;
   title?: string;
   slug?: string;
-  pageSections?: (
-    | {
-        accordion?: string | Accordion;
-        id?: string;
-        blockName?: string;
-        blockType: 'accordionBlock';
-      }
-    | {
-        hero?: string | Hero;
-        id?: string;
-        blockName?: string;
-        blockType: 'heroBlock';
-      }
-    | {
-        conversionPanel?: string | ConversionPanel;
-        id?: string;
-        blockName?: string;
-        blockType: 'conversionPanelBlock';
-      }
-    | {
-        featureGrid?: string | FeatureGrid;
-        id?: string;
-        blockName?: string;
-        blockType: 'featureGridBlock';
-      }
-    | {
-        iconTileGrid?: string | IconTileGrid;
-        id?: string;
-        blockName?: string;
-        blockType: 'iconTileGridBlock';
-      }
-    | {
-        process?: string | Process;
-        id?: string;
-        blockName?: string;
-        blockType: 'processBlock';
-      }
-    | {
-        switchback?: string | Switchback;
-        id?: string;
-        blockName?: string;
-        blockType: 'switchbackBlock';
-      }
-    | {
-        textGrid?: string | TextGrid;
-        id?: string;
-        blockName?: string;
-        blockType: 'textGridBlock';
-      }
-    | {
-        tileGrid?: string | TileGrid;
-        id?: string;
-        blockName?: string;
-        blockType: 'tileGridBlock';
-      }
-  )[];
+  pageSections?: {
+    internalName: string;
+    blocks?: (
+      | {
+          accordion?: string | Accordion;
+          id?: string;
+          blockName?: string;
+          blockType: 'accordionBlock';
+        }
+      | {
+          conversionPanel?: string | ConversionPanel;
+          id?: string;
+          blockName?: string;
+          blockType: 'conversionPanelBlock';
+        }
+      | {
+          featuredMedia?: string | FeaturedMedia;
+          id?: string;
+          blockName?: string;
+          blockType: 'featuredMediaBlock';
+        }
+      | {
+          featureGrid?: string | FeatureGrid;
+          id?: string;
+          blockName?: string;
+          blockType: 'featureGridBlock';
+        }
+      | {
+          hero?: string | Hero;
+          id?: string;
+          blockName?: string;
+          blockType: 'heroBlock';
+        }
+      | {
+          iconTileGrid?: string | IconTileGrid;
+          id?: string;
+          blockName?: string;
+          blockType: 'iconTileGridBlock';
+        }
+      | {
+          process?: string | Process;
+          id?: string;
+          blockName?: string;
+          blockType: 'processBlock';
+        }
+      | {
+          special?: string | Special;
+          id?: string;
+          blockName?: string;
+          blockType: 'specialBlock';
+        }
+      | {
+          switchback?: string | Switchback;
+          id?: string;
+          blockName?: string;
+          blockType: 'switchbackBlock';
+        }
+      | {
+          textGrid?: string | TextGrid;
+          id?: string;
+          blockName?: string;
+          blockType: 'textGridBlock';
+        }
+      | {
+          tileGrid?: string | TileGrid;
+          id?: string;
+          blockName?: string;
+          blockType: 'tileGridBlock';
+        }
+    )[];
+    enableGrid?: boolean;
+    gridColor?: 'purple' | 'green';
+    enableShapes?: boolean;
+    shapes?: {
+      shape?: 'dots' | 'pluses';
+      location?: 'top-left' | 'center-left' | 'bottom-left' | 'top-right' | 'center-right' | 'bottom-right';
+      id?: string;
+    }[];
+    id?: string;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -111,25 +136,14 @@ export interface Accordion {
   updatedAt: string;
   createdAt: string;
 }
-export interface Hero {
+export interface ConversionPanel {
   id: string;
   heading: string;
   headingTag: string;
-  subheading?: string;
   content?: {
     [k: string]: unknown;
   }[];
-  cta?: {
-    type?: 'button' | 'tile';
-    ctaButtons?: {
-      callToAction?: string | CallToAction;
-      id?: string;
-    }[];
-    ctaTiles?: {
-      callToActionTile?: string | CtaTile;
-      id?: string;
-    }[];
-  };
+  callToAction: string | CallToAction;
   updatedAt: string;
   createdAt: string;
 }
@@ -144,18 +158,21 @@ export interface CallToAction {
   updatedAt: string;
   createdAt: string;
 }
-export interface CtaTile {
+export interface FeaturedMedia {
   id: string;
-  internalName: string;
-  icon: string | Icon;
-  label: string;
-  linkType: 'internal' | 'external';
-  internalLink: string | Page;
-  externalLink: string;
+  heading: string;
+  headingTag: string;
+  content?: {
+    [k: string]: unknown;
+  }[];
+  assetType?: 'image' | 'video';
+  image?: string | Image;
+  video?: string | Video;
+  callToAction?: string | CallToAction;
   updatedAt: string;
   createdAt: string;
 }
-export interface Icon {
+export interface Image {
   id: string;
   alt: string;
   updatedAt: string;
@@ -177,14 +194,11 @@ export interface Icon {
     };
   };
 }
-export interface ConversionPanel {
+export interface Video {
   id: string;
-  heading: string;
-  headingTag: string;
-  content?: {
-    [k: string]: unknown;
-  }[];
-  callToAction: string | CallToAction;
+  internalName: string;
+  url: string;
+  placeholderImage: string | Image;
   updatedAt: string;
   createdAt: string;
 }
@@ -208,7 +222,41 @@ export interface FeatureTile {
   updatedAt: string;
   createdAt: string;
 }
-export interface Image {
+export interface Hero {
+  id: string;
+  heading: string;
+  headingTag: string;
+  subheading?: string;
+  content?: {
+    [k: string]: unknown;
+  }[];
+  cta?: {
+    type?: 'button' | 'tile';
+    ctaButtons?: {
+      callToAction?: string | CallToAction;
+      id?: string;
+    }[];
+    ctaTiles?: {
+      callToActionTile?: string | CtaTile;
+      id?: string;
+    }[];
+  };
+  homepage?: boolean;
+  updatedAt: string;
+  createdAt: string;
+}
+export interface CtaTile {
+  id: string;
+  internalName: string;
+  icon: string | Icon;
+  label: string;
+  linkType: 'internal' | 'external';
+  internalLink: string | Page;
+  externalLink: string;
+  updatedAt: string;
+  createdAt: string;
+}
+export interface Icon {
   id: string;
   alt: string;
   updatedAt: string;
@@ -264,6 +312,37 @@ export interface Process {
   updatedAt: string;
   createdAt: string;
 }
+export interface Special {
+  id: string;
+  heading: string;
+  headingTag: string;
+  subheading?: string;
+  content?: {
+    [k: string]: unknown;
+  }[];
+  sideBox?: {
+    [k: string]: unknown;
+  }[];
+  textGrid: string | TextGrid;
+  updatedAt: string;
+  createdAt: string;
+}
+export interface TextGrid {
+  id: string;
+  internalName: string;
+  heading?: string;
+  headingTag?: string;
+  content?: {
+    [k: string]: unknown;
+  }[];
+  textTiles?: {
+    text?: string;
+    id?: string;
+  }[];
+  callToAction?: string | CallToAction;
+  updatedAt: string;
+  createdAt: string;
+}
 export interface Switchback {
   id: string;
   internalName: string;
@@ -273,20 +352,6 @@ export interface Switchback {
   headingTag?: string;
   content?: {
     [k: string]: unknown;
-  }[];
-  updatedAt: string;
-  createdAt: string;
-}
-export interface TextGrid {
-  id: string;
-  heading: string;
-  headingTag: string;
-  content?: {
-    [k: string]: unknown;
-  }[];
-  textTiles?: {
-    text?: string;
-    id?: string;
   }[];
   callToAction?: string | CallToAction;
   updatedAt: string;
@@ -308,28 +373,6 @@ export interface TileGrid {
     id?: string;
   }[];
   callToAction?: string | CallToAction;
-  updatedAt: string;
-  createdAt: string;
-}
-export interface FeaturedMedia {
-  id: string;
-  heading: string;
-  headingTag: string;
-  content?: {
-    [k: string]: unknown;
-  }[];
-  assetType?: 'image' | 'video';
-  image?: string | Image;
-  video?: string | Video;
-  callToAction?: string | CallToAction;
-  updatedAt: string;
-  createdAt: string;
-}
-export interface Video {
-  id: string;
-  internalName: string;
-  url: string;
-  placeholderImage: string | Image;
   updatedAt: string;
   createdAt: string;
 }

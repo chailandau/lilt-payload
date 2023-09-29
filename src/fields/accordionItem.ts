@@ -11,7 +11,7 @@ export const accordionItems = (maxRows: number) => (
             maxRows,
             fields: [
                 ...heading('h3'),
-                ...richText
+                ...richText()
             ],
             admin: {
                 components: {

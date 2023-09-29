@@ -29,7 +29,7 @@ const Processes: CollectionConfig = {
             },
             fields: [
                 ...requiredField(heading('h2')),
-                ...richText
+                ...richText()
             ]
         },
         ...reference({ name: 'callToAction', relationTo: 'call-to-actions', required: true }),

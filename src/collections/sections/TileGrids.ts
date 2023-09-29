@@ -13,7 +13,7 @@ const TileGrids: CollectionConfig = {
     },
     fields: [
         ...requiredField(heading()),
-        ...richText,
+        ...richText(),
         {
             name: 'tiles',
             type: 'array',
@@ -29,7 +29,7 @@ const TileGrids: CollectionConfig = {
             },
             fields: [
                ...heading('h3'),
-               ...richText
+               ...richText()
             ]
         },
         ...reference({ name: 'callToAction', relationTo: 'call-to-actions' }),

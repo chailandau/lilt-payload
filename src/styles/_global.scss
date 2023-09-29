@@ -15,3 +15,9 @@ label.field-label .required {
 .render-title {
     font-size: rem(40);
 }
+
+.blocks-field__block-header {
+    .section-title {
+        display: none;
+    }
+}

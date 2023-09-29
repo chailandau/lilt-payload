@@ -18,7 +18,7 @@ const FeaturedMedia: CollectionConfig = {
     },
     fields: [
         ...requiredField(heading()),
-        ...richText,
+        ...richText(),
         ...toggleFields({
             radioGroupName: 'assetType',
             fieldChoices: [

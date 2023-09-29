@@ -14,7 +14,7 @@ const FeatureTiles: CollectionConfig = {
     fields: [
         ...requiredField(heading()),
         ...requiredField(image),
-        ...richText
+        ...richText()
     ]
 };
 
