@@ -85,12 +85,13 @@ const Heroes: CollectionConfig = {
             ...reference({ name: 'callToActionTile', relationTo: 'cta-tiles' }),
           ]
         },
-              {
-                  name: 'homepage',
-                  type: 'checkbox'
-              }
+             
       ],
-    }
+    },
+    {
+      name: 'homepage',
+      type: 'checkbox'
+  }
   ],
 
 };
