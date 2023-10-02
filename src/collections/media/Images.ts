@@ -7,6 +7,9 @@ const Images: CollectionConfig = {
     admin: {
         defaultColumns: ['filename', 'alt', 'width', 'height', 'filesize', 'updatedAt'],
     },
+    access: {
+        read: () => true,
+    },
     upload: {
         staticURL: '/images',
         staticDir: 'images',
@@ -29,7 +32,6 @@ const Images: CollectionConfig = {
         },
         ...setMaxFileSize(2621440)
     ],
-
 };
 
 export default Images;
