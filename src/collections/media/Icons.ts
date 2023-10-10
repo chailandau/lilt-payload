@@ -7,6 +7,9 @@ const Icons: CollectionConfig = {
     admin: {
         defaultColumns: ['filename', 'alt', 'width', 'height', 'filesize', 'updatedAt'],
     },
+    access: {
+        read: () => true,
+    },
     upload: {
         staticURL: '/icons',
         staticDir: 'icons',
