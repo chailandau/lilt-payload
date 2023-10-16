@@ -12,7 +12,7 @@ const FeatureGrids: CollectionConfig = {
     },
     fields: [
         ...requiredField(internalName),
-        ...heading('h2'),
+        ...heading,
         {
             name: 'featureTiles',
             type: 'relationship',

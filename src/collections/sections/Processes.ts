@@ -28,7 +28,7 @@ const Processes: CollectionConfig = {
                 }
             },
             fields: [
-                ...requiredField(heading('h2')),
+                ...requiredField(heading),
                 ...richText()
             ]
         },

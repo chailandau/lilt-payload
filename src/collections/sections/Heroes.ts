@@ -18,7 +18,7 @@ const Heroes: CollectionConfig = {
     defaultColumns: ['heading', 'updatedAt']
   },
   fields: [
-    ...requiredField(heading('h1')),
+    ...requiredField(heading),
     ...subheading,
     ...richText(),
     {

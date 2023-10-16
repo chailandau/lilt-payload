@@ -12,7 +12,7 @@ const FeatureTiles: CollectionConfig = {
         defaultColumns: ['heading', 'image', 'updatedAt'],
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...requiredField(image),
         ...richText()
     ]

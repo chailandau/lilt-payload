@@ -13,7 +13,7 @@ const Specials: CollectionConfig = {
         defaultColumns: ['heading', 'subheading', 'callToAction', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...subheading,
         ...richText(),
         ...richText('sideBox'),
