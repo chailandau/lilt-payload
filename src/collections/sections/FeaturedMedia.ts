@@ -17,7 +17,7 @@ const FeaturedMedia: CollectionConfig = {
         defaultColumns: ['heading', 'assetType', 'cta', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...richText(),
         ...toggleFields({
             radioGroupName: 'assetType',

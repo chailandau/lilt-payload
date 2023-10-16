@@ -11,7 +11,7 @@ const Accordions: CollectionConfig = {
         defaultColumns: ['heading', 'updatedAt'],
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...accordionItems(8)
     ],
 

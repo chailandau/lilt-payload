@@ -12,7 +12,7 @@ const TileGrids: CollectionConfig = {
         defaultColumns: ['heading', 'cta', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...richText(),
         {
             name: 'tiles',
@@ -28,7 +28,7 @@ const TileGrids: CollectionConfig = {
                 }
             },
             fields: [
-               ...heading('h3'),
+               ...heading,
                ...richText()
             ]
         },

@@ -12,7 +12,7 @@ const IconTileGrids: CollectionConfig = {
         defaultColumns: ['heading', 'cta', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...richText(),
         {
             name: 'iconTiles',

@@ -32,7 +32,7 @@ const Switchbacks: CollectionConfig = {
             ],
             defaultValue: 'left'
         },
-        ...heading(),
+        ...heading,
         ...richText(),
         ...reference({ name: 'callToAction', relationTo: 'call-to-actions'}),
     ],

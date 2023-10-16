@@ -12,7 +12,7 @@ const ConversionPanels: CollectionConfig = {
         defaultColumns: ['heading', 'callToAction', 'updatedAt']
     },
     fields: [
-        ...requiredField(heading()),
+        ...requiredField(heading),
         ...richText(),
         ...reference({ name: 'callToAction', relationTo: 'call-to-actions', required: true }),
     ],

@@ -10,7 +10,7 @@ export const accordionItems = (maxRows: number) => (
             type: 'array',
             maxRows,
             fields: [
-                ...heading('h3'),
+                ...heading,
                 ...richText()
             ],
             admin: {

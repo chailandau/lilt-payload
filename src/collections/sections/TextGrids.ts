@@ -13,7 +13,7 @@ const TextGrids: CollectionConfig = {
     },
     fields: [
         ...internalName,
-        ...heading(),
+        ...heading,
         ...richText(),
         {
             name: 'textTiles',

@@ -2,6 +2,7 @@ import path from 'path';
 
 import { buildConfig } from 'payload/config';
 import { CollectionConfig, GlobalConfig } from 'payload/types';
+import generateBase64 from 'payload-base64-plugin';
 
 import Users from './collections/admin/Users';
 import CallToActions from './collections/content/CallToActions';
@@ -44,6 +45,8 @@ export default buildConfig({
       }
     }
   },
+  plugins: [
+    generateBase64({ removeAlpha: false })],
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
