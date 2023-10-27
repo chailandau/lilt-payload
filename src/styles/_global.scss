@@ -22,38 +22,52 @@ label.field-label .required {
     }
 }
 
-.trigger-build-btn {
-    -webkit-tap-highlight-color: fade(#000, 0%);
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
-    &::-moz-focus-inner {
-        border: 0;
+.trigger-build {
+    &__btn {
+        //reset
+        -webkit-tap-highlight-color: fade(#000, 0%);
+        border: none;
+        margin: 0;
         padding: 0;
+        width: auto;
+        overflow: visible;
+        color: inherit;
+        font: inherit;
+        line-height: normal;
+        -webkit-font-smoothing: inherit;
+        -moz-osx-font-smoothing: inherit;
+        -webkit-appearance: none;
+        &::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        // styles
+        background-color: #31c6f4;
+        color: #000000;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: rem(16) rem(24);
+        border-radius: rem(20);
+        box-shadow: 0px 0px 20px rgba(#000f3c, 0.3);
+        margin-bottom: rem(20);
+        margin-right: 0;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            background-color: #9add5b;
+            box-shadow: 0px 0px 20px rgba(#9f32f4, 0.3);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background-color: #c2c2c2;
+            box-shadow: none;
+        }
     }
-
-    background-color: #31c6f4;
-    color: #000000;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: rem(16) rem(24);
-    border-radius: rem(20);
-    box-shadow: 0px 0px 20px rgba(#000f3c, 0.3);
-    margin-bottom: rem(40);
-    margin-right: 0;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    &:hover {
-        cursor: pointer;
-        background-color: #9add5b;
-        box-shadow: 0px 0px 20px rgba(#9f32f4, 0.3);
+    &__text {
+        margin-right: rem(20);
+        font-size: rem(15);
+        line-height: rem(20);
+        margin-bottom: rem(40);
     }
 }
