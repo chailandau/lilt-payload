@@ -23,6 +23,7 @@ label.field-label .required {
 }
 
 .trigger-build {
+    margin-bottom: rem(40);
     &__btn {
         //reset
         -webkit-tap-highlight-color: fade(#000, 0%);
@@ -68,6 +69,5 @@ label.field-label .required {
         margin-right: rem(20);
         font-size: rem(15);
         line-height: rem(20);
-        margin-bottom: rem(40);
     }
 }
