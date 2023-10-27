@@ -21,6 +21,7 @@ COPY .env ./
 WORKDIR /home/node/app
 COPY package*.json  ./
 COPY ./assets ./assets
+COPY .env ./
 
 RUN yarn install --production
 COPY --from=builder /home/node/app/dist ./dist
