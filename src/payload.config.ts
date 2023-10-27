@@ -32,9 +32,7 @@ import Header from './globals/Header';
 import Pages from './templates/Pages';
 import { createGroup } from './utils/createGroups';
 
-dotenv.config({
-  path: path.resolve(__dirname, './.env'),
-});
+dotenv.config();
 
 export default buildConfig({
   admin: {
