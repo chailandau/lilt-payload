@@ -5,7 +5,7 @@ dotenv.config();
 
 export const triggerBuildHook = async () => {
   try {
-    console.log('hi2!');
+    console.log('hi3!');
     
 return await axios.post(`${process.env.PAYLOAD_PUBLIC_CAPROVER_WEBHOOK}`);
   } catch (error) {
