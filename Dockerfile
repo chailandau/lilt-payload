@@ -5,25 +5,22 @@ FROM base as builder
 WORKDIR /home/node/app
 COPY package*.json ./
 
+ARG PAYLOAD_PUBLIC_CAPROVER_WEBHOOK=${PAYLOAD_PUBLIC_CAPROVER_WEBHOOK}
+ENV PAYLOAD_PUBLIC_CAPROVER_WEBHOOK=${PAYLOAD_PUBLIC_CAPROVER_WEBHOOK}
+
 COPY . .
 RUN yarn install
 RUN yarn build
 
 FROM base as runtime
 
-
-
-ENV NODE_ENV=production
 ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
-
-COPY .env ./
 
 WORKDIR /home/node/app
 COPY package*.json  ./
 COPY ./assets ./assets
-COPY .env ./
 
-RUN yarn install --production
+RUN yarn install
 COPY --from=builder /home/node/app/dist ./dist
 COPY --from=builder /home/node/app/build ./build
 
