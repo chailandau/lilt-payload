@@ -33,7 +33,7 @@ import Pages from './templates/Pages';
 import { createGroup } from './utils/createGroups';
 
 dotenv.config({
-  path: path.resolve(__dirname, '../.env'),
+  path: path.resolve(__dirname, './.env'),
 });
 
 export default buildConfig({
