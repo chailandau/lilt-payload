@@ -1,5 +1,6 @@
 import path from 'path';
 
+import dotenv from 'dotenv';
 import { buildConfig } from 'payload/config';
 import { CollectionConfig, GlobalConfig } from 'payload/types';
 import generateBase64 from 'payload-base64-plugin';
@@ -30,6 +31,8 @@ import Footer from './globals/Footer';
 import Header from './globals/Header';
 import Pages from './templates/Pages';
 import { createGroup } from './utils/createGroups';
+
+dotenv.config();
 
 export default buildConfig({
   admin: {
