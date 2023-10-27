@@ -1,4 +1,4 @@
-$base-font-size: 16;
+@use "sass:math";
 
 // px to rem
 @function rem($val) {
