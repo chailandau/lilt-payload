@@ -25,6 +25,7 @@ import TextGrids from './collections/sections/TextGrids';
 import TileGrids from './collections/sections/TileGrids';
 import { Icon } from './custom/Icon';
 import { Logo } from './custom/Logo';
+import TriggerBuildButton from './custom/TriggerBuildButton';
 import Footer from './globals/Footer';
 import Header from './globals/Header';
 import Pages from './templates/Pages';
@@ -39,6 +40,7 @@ export default buildConfig({
       ogImage: '/assets/og-image.png'
     },
     components: {
+      beforeNavLinks: [TriggerBuildButton],
       graphics: {
         Icon,
         Logo
@@ -65,6 +67,7 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'payload-schema.graphql'),
   },
   cors: [
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}`
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}`,
+    `${process.env.PAYLOAD_PUBLIC_CAPROVER_WEBHOOK}`,
   ]
 });
