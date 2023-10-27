@@ -5,9 +5,7 @@ export const triggerBuildHook = async () => {
     const response = await axios.post(`${process.env.PAYLOAD_PUBLIC_CAPROVER_WEBHOOK}`,
       {
         event: 'build',
-        mode: 'no-cors',
         headers: {
-          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
       }
