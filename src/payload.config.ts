@@ -1,5 +1,6 @@
 import path from 'path';
 
+import seo from '@payloadcms/plugin-seo';
 import dotenv from 'dotenv';
 import { buildConfig } from 'payload/config';
 import { CollectionConfig, GlobalConfig } from 'payload/types';
@@ -51,7 +52,27 @@ export default buildConfig({
     }
   },
   plugins: [
-    generateBase64({ removeAlpha: false })],
+    generateBase64({ removeAlpha: false }),
+  
+    seo({
+      collections: ['pages'],
+      tabbedUI: true,
+      uploadsCollection: 'images',
+      generateURL: () => 'https://longislandlasertag.com/',
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      generateTitle: ({ doc }) => `${doc?.title?.value} | Long Island Laser Tag`,
+      fields: [
+          {
+              name: 'noIndex',
+              type: 'checkbox',
+              admin: {
+                  description: 'Disable indexing of this page.'
+              }
+          }
+      ]
+  })],
+    
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     ...createGroup([Pages], 'Templates') as CollectionConfig[],
