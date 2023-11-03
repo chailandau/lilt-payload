@@ -4,13 +4,12 @@ import { Accordion } from '../blocks/Accordion';
 import { ConversionPanel } from '../blocks/ConversionPanel';
 import { FeaturedMedia } from '../blocks/FeaturedMedia';
 import { FeatureGrid } from '../blocks/FeatureGrid';
-import { Heading } from '../blocks/Heading';
 import { Hero } from '../blocks/Hero';
 import { IconTileGrid } from '../blocks/IconTileGrid';
 import { Process } from '../blocks/Process';
-import { RichText } from '../blocks/RichText';
 import { Special } from '../blocks/Special';
 import { Switchback } from '../blocks/Switchback';
+import { TextContent } from '../blocks/TextContent';
 import { TextGrid } from '../blocks/TextGrid';
 import { TileGrid } from '../blocks/TileGrid';
 
@@ -32,6 +31,7 @@ export const blocks = [
             Process, 
             Special, 
             Switchback, 
+            TextContent,
             TextGrid, 
             TileGrid 
         ]
@@ -60,13 +60,3 @@ export const pageSections =  [
     }
 ] as Field[];
 
-export const legalBlocks = [
-    {
-        name: 'legalBlocks',
-        type: 'blocks',
-        blocks: [
-            Heading,
-           RichText
-        ]
-    }
-] as Field[];
