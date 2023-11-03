@@ -30,7 +30,6 @@ import { Logo } from './custom/Logo';
 import TriggerBuildButton from './custom/TriggerBuildButton';
 import Footer from './globals/Footer';
 import Header from './globals/Header';
-import LegalPage from './templates/Legal';
 import Pages from './templates/Pages';
 import { createGroup } from './utils/createGroups';
 
@@ -56,7 +55,7 @@ export default buildConfig({
     generateBase64({ removeAlpha: false }),
   
     seo({
-      collections: ['legal-pages', 'pages' ],
+      collections: ['pages' ],
       tabbedUI: true,
       uploadsCollection: 'images',
       generateURL: () => 'https://longislandlasertag.com/',
@@ -76,7 +75,7 @@ export default buildConfig({
     
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
-    ...createGroup([Pages, LegalPage], 'Templates') as CollectionConfig[],
+    ...createGroup([Pages], 'Templates') as CollectionConfig[],
     ...createGroup([Accordions, ConversionPanels, FeaturedMedia, FeatureGrids, Heroes, IconTileGrids, Processes, Specials, Switchbacks, TextGrids, TileGrids], 'Sections') as CollectionConfig[],
     ...createGroup([CallToActions, CtaTiles, FeatureTiles, IconTiles], 'Content') as CollectionConfig[],
     ...createGroup([Icons, Images, Videos], 'Media') as CollectionConfig[],
