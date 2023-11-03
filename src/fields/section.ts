@@ -4,9 +4,11 @@ import { Accordion } from '../blocks/Accordion';
 import { ConversionPanel } from '../blocks/ConversionPanel';
 import { FeaturedMedia } from '../blocks/FeaturedMedia';
 import { FeatureGrid } from '../blocks/FeatureGrid';
+import { Heading } from '../blocks/Heading';
 import { Hero } from '../blocks/Hero';
 import { IconTileGrid } from '../blocks/IconTileGrid';
 import { Process } from '../blocks/Process';
+import { RichText } from '../blocks/RichText';
 import { Special } from '../blocks/Special';
 import { Switchback } from '../blocks/Switchback';
 import { TextGrid } from '../blocks/TextGrid';
@@ -54,6 +56,17 @@ export const pageSections =  [
             ...blocks,
             ...grid,
             ...shapes
+        ]
+    }
+] as Field[];
+
+export const legalBlocks = [
+    {
+        name: 'legalBlocks',
+        type: 'blocks',
+        blocks: [
+            Heading,
+           RichText
         ]
     }
 ] as Field[];
