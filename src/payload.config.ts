@@ -25,6 +25,7 @@ import Specials from './collections/sections/Specials';
 import Switchbacks from './collections/sections/Switchbacks';
 import TextGrids from './collections/sections/TextGrids';
 import TileGrids from './collections/sections/TileGrids';
+import BeforeDashboard from './custom/BeforeDashboard';
 import { Icon } from './custom/Icon';
 import { Logo } from './custom/Logo';
 import TriggerBuildButton from './custom/TriggerBuildButton';
@@ -48,7 +49,8 @@ export default buildConfig({
       graphics: {
         Icon,
         Logo
-      }
+      },
+      beforeDashboard: [BeforeDashboard]
     }
   },
   plugins: [

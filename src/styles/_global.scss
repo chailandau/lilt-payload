@@ -64,6 +64,14 @@ label.field-label .required {
             background-color: #c2c2c2;
             box-shadow: none;
         }
+        &.teal {
+            background-color: #40e7c9;
+            &:hover,
+            &:focus {
+                background-color: #885fff;
+                color: white;
+            }
+        }
     }
     &__text {
         margin-right: rem(20);
